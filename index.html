@@ -4,8 +4,6 @@
   <meta charset="UTF-8" />
   <title>For My Love Suhanee 💖</title>
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-
-  <!-- Google Font -->
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
 
   <style>
@@ -39,6 +37,7 @@
       animation: fadeIn 3s ease-in-out;
     }
 
+    /* Special Moments */
     .special-box {
       background: rgba(255, 255, 255, 0.5);
       padding: 25px;
@@ -47,7 +46,6 @@
       max-width: 700px;
       border-radius: 20px;
       box-shadow: 0 8px 20px rgba(0,0,0,0.15);
-      animation: fadeIn 3.5s ease-in-out;
       backdrop-filter: blur(7px);
     }
 
@@ -57,20 +55,34 @@
       font-size: 1.8rem;
     }
 
+    /* Songs */
     .song-section {
       margin-top: 40px;
       padding: 25px;
       background: rgba(255, 255, 255, 0.45);
-      backdrop-filter: blur(8px);
       width: 85%;
       max-width: 750px;
       margin: 40px auto;
       border-radius: 20px;
       box-shadow: 0 10px 25px rgba(0,0,0,0.15);
-      animation: fadeIn 4s ease-in-out;
     }
 
-    /* ---------- PUZZLE IMAGE GALLERY ---------- */
+    .song-card {
+      background: #ffffffb8;
+      padding: 15px;
+      margin: 10px auto;
+      border-radius: 15px;
+      max-width: 600px;
+      box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+    }
+
+    audio {
+      width: 100%;
+      margin-top: 5px;
+      border-radius: 10px;
+    }
+
+    /* GALLERY */
     .gallery {
       display: flex;
       justify-content: center;
@@ -79,87 +91,62 @@
       margin-top: 40px;
     }
 
-    .locked-img {
+    .locked-image {
       width: 260px;
       height: 300px;
       object-fit: cover;
-      border-radius: 15px;
-      filter: blur(8px) brightness(0.6);
-      transition: 0.4s;
-      cursor: pointer;
-    }
-
-    .unlock-btn {
-      margin-top: 10px;
-      background: #ff4b91;
-      color: white;
-      border: none;
-      padding: 8px 15px;
-      border-radius: 12px;
-      cursor: pointer;
-      font-size: 0.9rem;
-      transition: 0.3s;
-    }
-
-    .unlock-btn:hover {
-      background: #c9005b;
-    }
-
-    /* Puzzle Modal */
-    .puzzle-box {
-      position: fixed;
-      top: 0; left: 0;
-      width: 100%; height: 100%;
-      background: rgba(0,0,0,0.5);
-      display: none;
-      justify-content: center;
-      align-items: center;
-      backdrop-filter: blur(3px);
-    }
-
-    .puzzle-content {
-      background: white;
-      padding: 25px;
-      width: 300px;
       border-radius: 20px;
-      text-align: center;
-      animation: zoomIn 0.3s;
+      filter: blur(7px) brightness(0.6);
+      transition: 0.4s;
     }
 
-    .puzzle-content button {
-      margin: 8px;
-      padding: 10px;
-      border: none;
+    .unlock-box {
+      background: white;
+      width: 260px;
+      padding: 15px;
+      margin-top: -10px;
+      border-radius: 15px;
+      box-shadow: 0 7px 20px rgba(0,0,0,0.15);
+    }
+
+    .slider {
+      width: 100%;
+      appearance: none;
+      height: 10px;
       border-radius: 10px;
-      cursor: pointer;
-      font-size: 1rem;
+      background: #ffc7dd;
+      outline: none;
     }
 
-    /* Image Popup */
+    .slider::-webkit-slider-thumb {
+      appearance: none;
+      width: 40px;
+      height: 25px;
+      background: #ff4b91;
+      border-radius: 15px;
+      cursor: pointer;
+    }
+
+    /* POPUP */
     .popup {
       position: fixed;
       top: 0; left: 0;
       width: 100%; height: 100%;
-      background: rgba(0,0,0,0.7);
+      background: rgba(0,0,0,0.6);
       display: none;
       justify-content: center;
       align-items: center;
-      backdrop-filter: blur(5px);
+      backdrop-filter: blur(4px);
     }
 
     .popup img {
       width: 350px;
       border-radius: 20px;
-      animation: fadeInZoom 0.4s;
+      animation: zoom 0.3s;
     }
 
-    @keyframes fadeInZoom {
-      from { opacity: 0; transform: scale(0.7); }
-      to { opacity: 1; transform: scale(1); }
-    }
-
-    @keyframes zoomIn {
-      from { transform: scale(0.6); opacity: 0; }
+    @keyframes zoom {
+      from { transform: scale(0.5); opacity: 0; }
       to { transform: scale(1); opacity: 1; }
     }
 
@@ -177,81 +164,80 @@
 
 <p>
   Every moment with you feels like magic.  
-  You are the calm in my chaos and the most beautiful chapter of my life.  
+  You are the calm in my chaos.  
   <br><b>— Biswajit</b> 💗
 </p>
 
-<!-- ------------ IMAGE GALLERY WITH PUZZLE ------------ -->
+<!-- Songs Section -->
+<div class="song-section">
+  <h2>💿 Our Songs Playlist 💗</h2>
 
-<h2 style="margin-top:40px; color:#a60053;">📷 Tap to Unlock Each Memory 💗</h2>
+  <div class="song-card">
+    <div class="song-title">🎵 Guzarish – Javed Ali</div>
+    <audio autoplay controls>
+      <source src="Guzarish Ghajini 128 Kbps (1).mp3" type="audio/mpeg">
+    </audio>
+  </div>
+</div>
 
+<!-- Gallery Title -->
+<h2 style="margin-top:40px; color:#a60053;">📷 Slide to Unlock Our Memories 💗</h2>
+
+<!-- GALLERY WITH SLIDE PUZZLE -->
 <div class="gallery">
-  
+
+  <!-- IMG 1 -->
   <div>
-    <img src="WhatsApp Image 2025-12-10 at 19.48.40_0a74b032.jpg" class="locked-img" onclick="openPuzzle(1)">
+    <img id="img1" class="locked-image" src="WhatsApp Image 2025-12-10 at 19.48.40_0a74b032.jpg">
+    <div class="unlock-box">
+      <p style="font-size:14px;">Slide to Unlock 💗</p>
+      <input type="range" min="0" max="100" value="0" class="slider" oninput="unlockImage(1, this.value)">
+    </div>
   </div>
 
+  <!-- IMG 2 -->
   <div>
-    <img src="WhatsApp Image 2025-12-10 at 19.48.40_80fad757.jpg" class="locked-img" onclick="openPuzzle(2)">
+    <img id="img2" class="locked-image" src="WhatsApp Image 2025-12-10 at 19.48.40_80fad757.jpg">
+    <div class="unlock-box">
+      <p style="font-size:14px;">Slide to Unlock 💗</p>
+      <input type="range" min="0" max="100" value="0" class="slider" oninput="unlockImage(2, this.value)">
+    </div>
   </div>
 
+  <!-- IMG 3 -->
   <div>
-    <img src="WhatsApp Image 2025-12-10 at 19.48.41_0e496f91.jpg" class="locked-img" onclick="openPuzzle(3)">
+    <img id="img3" class="locked-image" src="WhatsApp Image 2025-12-10 at 19.48.41_0e496f91.jpg">
+    <div class="unlock-box">
+      <p style="font-size:14px;">Slide to Unlock 💗</p>
+      <input type="range" min="0" max="100" value="0" class="slider" oninput="unlockImage(3, this.value)">
+    </div>
   </div>
 
 </div>
 
-<!-- PUZZLE POPUP -->
-<div class="puzzle-box" id="puzzleBox">
-  <div class="puzzle-content">
-    <h3>💗 Solve this small puzzle</h3>
-    <p>Which heart is the real love heart? 💘</p>
-
-    <button onclick="checkAnswer('wrong')">💛 Yellow</button>
-    <button onclick="checkAnswer('correct')">❤️ Red</button>
-    <button onclick="checkAnswer('wrong')">💙 Blue</button>
-
-    <br><br>
-    <button onclick="closePuzzle()" style="background:#555;color:white;">Close</button>
-  </div>
-</div>
-
-<!-- IMAGE POPUP -->
+<!-- POPUP -->
 <div class="popup" id="popup">
   <img id="popupImg" src="">
 </div>
 
 <script>
-let selectedImage = "";
+function unlockImage(id, value) {
+  if (value >= 100) {
+    let img = document.getElementById("img" + id);
+    
+    img.style.filter = "blur(0px) brightness(1)";
+    img.style.cursor = "pointer";
 
-function openPuzzle(imgNumber) {
-  selectedImage = imgNumber;
-  document.getElementById("puzzleBox").style.display = "flex";
-}
-
-function closePuzzle() {
-  document.getElementById("puzzleBox").style.display = "none";
-}
-
-function checkAnswer(answer) {
-  if (answer === "correct") {
-    closePuzzle();
-
-    let imgSrc = "";
-    if (selectedImage == 1) imgSrc = "WhatsApp Image 2025-12-10 at 19.48.40_0a74b032.jpg";
-    if (selectedImage == 2) imgSrc = "WhatsApp Image 2025-12-10 at 19.48.40_80fad757.jpg";
-    if (selectedImage == 3) imgSrc = "WhatsApp Image 2025-12-10 at 19.48.41_0e496f91.jpg";
-
-    document.getElementById("popupImg").src = imgSrc;
-    document.getElementById("popup").style.display = "flex";
-  } else {
-    alert("Oops! Try again 💗");
+    img.onclick = () => {
+      document.getElementById("popupImg").src = img.src;
+      document.getElementById("popup").style.display = "flex";
+    }
   }
 }
 
-document.getElementById("popup").addEventListener("click", () => {
+document.getElementById("popup").onclick = () => {
   document.getElementById("popup").style.display = "none";
-});
+}
 </script>
 
 <div class="footer">
