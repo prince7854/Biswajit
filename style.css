@@ -1,0 +1,71 @@
+:root{
+  --pink-1:#ffb6c1;
+  --mauve:#8b5fbf;
+  --cream:#fff6f2;
+  --text:#3a2b2b;
+  --card-bg: rgba(255,246,242,0.85);
+}
+
+*{box-sizing:border-box}
+body{
+  font-family: "Poppins", system-ui, sans-serif;
+  color:var(--text);
+  background: linear-gradient(135deg, var(--pink-1), var(--mauve));
+  margin:0;
+  -webkit-font-smoothing:antialiased;
+}
+
+/* Container sections */
+.card-section{
+  max-width:920px;
+  margin:28px auto;
+  padding:18px;
+  background:var(--card-bg);
+  border-radius:14px;
+  box-shadow:0 8px 30px rgba(0,0,0,0.08);
+}
+
+/* HERO */
+.hero{
+  padding:30px 16px;
+}
+.hero-inner{display:flex;gap:18px;align-items:center;flex-wrap:wrap}
+.hero-photo{width:220px;border-radius:12px;box-shadow:0 8px 30px rgba(0,0,0,0.12)}
+.hero-text h1{font-family:"Merriweather", serif;margin-bottom:8px;color:var(--mauve)}
+.btn{
+  display:inline-block;
+  margin-top:10px;
+  padding:10px 14px;
+  background:var(--mauve);
+  color:white;
+  border-radius:12px;
+  text-decoration:none;
+}
+
+/* Timeline */
+.timeline{display:flex;flex-direction:column;gap:12px}
+.event{padding:10px;border-left:3px solid var(--mauve)}
+.event time{font-size:12px;color:#6b556b}
+
+/* Gallery */
+.grid{display:grid;grid-template-columns:repeat(3,1fr);gap:12px}
+.polaroid{background:var(--cream);padding:8px;border-radius:8px;text-align:center}
+.polaroid img{width:100%;height:180px;object-fit:cover;border-radius:6px;display:block}
+.polaroid figcaption{margin-top:8px;font-size:13px;color:var(--mauve)}
+
+/* Reasons */
+.reasons{list-style:none;display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:12px}
+.reasons li{background:white;padding:10px;border-radius:10px;box-shadow:0 6px 18px rgba(0,0,0,0.05)}
+
+/* Gift content */
+.hidden{display:none}
+.gift{display:inline-block;padding:10px;background:linear-gradient(45deg,var(--mauve),var(--pink-1));border-radius:12px;color:white;cursor:pointer}
+
+/* Footer */
+.footer{text-align:center;color:rgba(0,0,0,0.6)}
+
+/* Responsive */
+@media (max-width:800px){
+  .grid{grid-template-columns:repeat(2,1fr)}
+  .hero-photo{width:160px}
+}
